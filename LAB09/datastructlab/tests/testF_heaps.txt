@@ -1,0 +1,31 @@
+These tests are not new, they are from the documentation strings in heapmodule.py.
+
+Try this
+$ python3 heapmodule,py
+
+
+>>> from heapmodule import Heap
+
+Create an empty heap.
+
+>>> myheap = Heap()
+
+>>> isinstance(myheap, Heap)
+True
+
+
+
+>>> for x in [50, 60, 20, 50, 30]:
+...     myheap.push(x)
+
+>>> myheap.pop()
+60
+
+>>> myheap.is_empty()
+False
+
+What's at the top of the heap now?
+
+>>> myheap.peek()
+50
+

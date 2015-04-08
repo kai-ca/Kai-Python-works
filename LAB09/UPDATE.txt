@@ -1,0 +1,23 @@
+Greetings Pythonistas,
+
+
+I updated heapmodule.py and added testE_heaps.txt on 20-MAR-2015 at 12:35 pm.
+
+Thanks to Jennifer for catching a problem with heapmodule.py
+
+DO THIS:  
+
+    (1) If you haven't copied the datastructlab yet, just do it now, no problem. 
+
+    (2) If you already copied the datastructlab, you need to either do it again,
+
+        or just copy these two  files
+
+            datastructlab/heapmodule.py
+            
+            datastructlab/tests/testE_heaps.txt
+
+
+Ulf
+
+

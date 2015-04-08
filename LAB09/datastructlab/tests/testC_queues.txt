@@ -1,0 +1,31 @@
+We create a class named Queue and then creates instances.
+
+>>> from queuemodule import Queue
+
+
+>>> myqueue = Queue()
+
+>>> for item in ['Adam', 'Maria', 'Pluto', 'Bing', 'James']:
+...     myqueue.push(item)
+
+>>> myqueue.pop()
+'Adam'
+
+>>> myqueue.peek()
+'Maria'
+
+>>> print(myqueue)
+<Queue: 4 items>
+
+
+>>> while not myqueue.is_empty():
+...     print(myqueue.pop())
+Maria
+Pluto
+Bing
+James
+
+>>> myqueue.is_empty()
+True
+
+

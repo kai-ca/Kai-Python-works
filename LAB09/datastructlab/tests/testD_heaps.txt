@@ -1,0 +1,40 @@
+
+We test our Heap class.
+
+Heaps can be implemented to be very efficient but we are just practicing OOP programming in this lab.
+
+
+>>> from heapmodule import Heap
+
+
+>>> mylist = [30, 50, 20, 60, 50, 40, 20]
+
+>>> isinstance(mylist, list)
+True
+
+
+Create a heap from the given mylist.
+
+>>> myheap = Heap(mylist)
+
+>>> isinstance(myheap, Heap)
+True
+
+>>> myheap.peek()
+60
+
+>>> myheap.pop()
+60
+
+>>> myheap.peek()
+50
+
+
+>>> myheap.pop()
+50
+>>> myheap.pop()
+50
+>>> myheap.pop()
+40
+
+

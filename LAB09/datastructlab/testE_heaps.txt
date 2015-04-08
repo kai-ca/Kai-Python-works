@@ -1,0 +1,57 @@
+
+One more test for our Heap datastructure
+
+
+>>> from heapmodule import Heap
+
+>>> mydatalist = [80, 90, 90, 40, 120, 20]
+
+>>> myheap = Heap(mydatalist)
+
+>>> isinstance(myheap, Heap)
+True
+
+Pop a few items.
+
+>>> myheap.pop()
+120
+>>> myheap.pop()
+90
+>>> myheap.pop()
+90
+>>> myheap.pop()
+80
+
+Take a peek.
+
+>>> myheap.peek()
+40
+
+Our mydatalist should not change.  Let's check that.
+
+>>> mydatalist
+[80, 90, 90, 40, 120, 20]
+
+
+
+The data could be strings.
+
+>>> mycities = ['Paris', 'San Francisco', 'Shanghai', 'Rio de Janeiro', 'London']
+
+>>> cityheap = Heap(mycities)
+
+>>> cityheap.pop()
+'Shanghai'
+
+>>> cityheap.pop()
+'San Francisco'
+
+>>> cityheap.pop()
+'Rio de Janeiro'
+
+
+The original list should not change. Let's check.
+
+>>> mycities
+['Paris', 'San Francisco', 'Shanghai', 'Rio de Janeiro', 'London']
+

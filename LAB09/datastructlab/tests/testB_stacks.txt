@@ -1,0 +1,50 @@
+We continue to test stack methods.
+
+>>> from stackmodule import Stack
+
+>>> mystack = Stack()
+
+>>> isinstance(mystack, Stack)
+True
+
+
+The Stack has a push method.  Push a bunch of numbers  onto the stack.
+
+>>> for item in [90, 30, 50, 60, 20, 50]:
+...     mystack.push(item)
+
+Your  __str__ method is used by print to get a nice format here.
+
+>>> print(mystack)
+<Stack: 6 items>
+
+>>> mystack.peek()
+50
+
+>>> print(mystack)
+<Stack: 6 items>
+
+Remove an item from the stack using the pop method you defined for Stack.
+Notice that it's LIFO !
+
+
+>>> mystack.pop()
+50
+
+>>> print(mystack)
+<Stack: 5 items>
+
+
+
+>>> while not mystack.is_empty():
+...     print(mystack.pop())
+20
+60
+50
+30
+90
+
+>>> mystack.is_empty()
+True
+
+

@@ -1,0 +1,41 @@
+Copyright (c)2015 Ulf Wostner <wostner@cyberprof.com>. All rights reserved.
+
+>>> from rollcount import how_many
+>>> from dice import rollpairs
+>>> from predicates import is_double, is_seven_eleven, is_double_six
+
+>>> import random
+>>> random.seed('downtown')
+
+>>> myrolls = rollpairs(12)
+
+>>> myrolls
+[(2, 5), (4, 5), (4, 1), (6, 6), (2, 2), (6, 1), (5, 5), (1, 4), (6, 6), (4, 6), (3, 6), (2, 1)]
+
+
+>>> how_many(myrolls, is_double)
+4
+
+>>> how_many(myrolls, is_seven_eleven)
+2
+
+
+>>> sixhundredrolls = rollpairs(600)
+
+>>> from predicates import sum_is_at_least, sum_is_at_most
+
+
+>>> how_many(sixhundredrolls, is_double)
+113
+
+
+
+>>> def is_big_roll(pair):
+...    return sum_is_at_least(pair, 10)
+
+>>> how_many(sixhundredrolls, is_big_roll)
+101
+
+>>> how_many(myrolls, is_big_roll)
+4
+

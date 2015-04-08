@@ -1,0 +1,79 @@
+
+>>> from cycle import Cycle
+
+>>> from data import DIRECTIONS, WEEKDAYS
+
+Create cyclic data structures using the Cycle class.
+
+>>> compass = Cycle(DIRECTIONS)
+
+>>> isinstance(compass, Cycle)
+True
+
+>>> week = Cycle(WEEKDAYS)
+
+
+--- The Seven Days of the Week ---
+
+Imagine a pointer pointing at the cyclic wheel of week.
+It starts at position 0.
+
+>>> week.item()
+'Mon'
+
+>>> week.pointer
+0
+
+>>> week.rotate()
+
+The pointer has moved forward by one step so now it is 1.
+
+>>> week.pointer
+1
+
+>>> week.item()
+'Tue'
+
+
+Rotate by 21 steps, 3 whole weeks forward.
+
+>>> week.rotate(21)
+>>> week.item()
+'Tue'
+
+
+--- The Four Cardinal Directions ---
+
+>>> DIRECTIONS
+['North', 'East', 'South', 'West']
+
+>>> compass = Cycle(DIRECTIONS)
+
+The "first" direction is North.
+
+>>> compass.item()
+'North'
+
+>>> compass.pointer
+0
+
+
+But, in some cultures the "first" direction is East, not North.
+
+We can reset the pointer so that we "start" at 1.
+
+>>> compass.pointer = 1
+
+>>> compass.item()
+'East'
+
+>>> compass.rotate()
+
+>>> compass.item()
+'South'
+
+>>> compass.rotate(21)
+
+>>> compass.item()
+'West'
+

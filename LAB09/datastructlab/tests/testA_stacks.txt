@@ -1,0 +1,42 @@
+Testing our Stack class.
+
+The Stack class implements a LIFO = Last In First Out data structure, like a atack of plates. 
+The last plate you put on the stack is the first plate that will be removed.
+
+>>> from stackmodule import Stack
+
+Use your Stack class to create an instance named plates.
+
+>>> plates = Stack()
+
+>>> isinstance(plates, Stack)
+True
+
+>>> plates.push('plate1')
+>>> plates.push('plate2')
+
+Is the top plate clean?
+
+>>> plates.peek()
+'plate2'
+
+Remove that top plate.
+
+>>> plates.pop()
+'plate2'
+
+>>> plates.is_empty()
+False
+
+Maybe this plate is cleaner.
+
+>>> plates.pop()
+'plate1'
+
+>>> plates.is_empty()
+True
+
+
+
+
+

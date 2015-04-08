@@ -1,0 +1,87 @@
+GAMEPLAN:
+
+    Read the tests in tests/testA.txt
+    Write code in cycle.py until tests/testA.txt is OK.
+
+    Read the tests in tests/testBtxt
+    Write code in cycle.py until tests/testB.txt is OK.
+
+    Read the tests in tests/testC.txt
+    Write code in cycle.py until tests/testC.txt is OK.
+
+>>> from cycle import Cycle
+>>> from data import SEASONS
+
+>>> SEASONS
+['Spring', 'Summer', 'Fall', 'Winter']
+
+>>> seasons = Cycle(SEASONS)
+
+>>> isinstance(seasons, Cycle)
+True
+
+This attribute knows how many items are in the Cycle object.
+
+>>> seasons.n
+4
+
+This is a pointer at the cyclic "wheel" of items.
+It points to the "current" item.
+
+>>> seasons.item()
+'Spring'
+
+>>> seasons.pointer
+0
+
+>>> seasons.rotate()
+
+>>> seasons.pointer
+1
+>>> seasons.item()
+'Summer'
+
+
+
+
+>>> from data import WEEKDAYS
+
+>>> WEEKDAYS
+['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
+>>> week = Cycle(WEEKDAYS)
+
+>>> week.n
+7
+
+>>> isinstance(week, Cycle)
+True
+
+
+>>> for count in range(10):
+...     print(week.item())
+...     week.rotate()
+Mon
+Tue
+Wed
+Thu
+Fri
+Sat
+Sun
+Mon
+Tue
+Wed
+
+>>> week.pointer
+10
+
+Reset the pointer to 0.
+
+>>> week.pointer = 0
+>>> week.item()
+'Mon'
+>>> week.rotate()
+>>> week.item()
+'Tue'
+
+        

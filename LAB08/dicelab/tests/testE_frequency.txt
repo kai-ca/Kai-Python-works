@@ -1,0 +1,87 @@
+Copyright (c)2015 Ulf Wostner <wostner@cyberprof.com>. All rights reserved.
+
+>>> from frequency import freqdict, print_freqtable
+
+>>> myrolls = [5, 4, 2, 4, 6, 6, 6, 6, 4, 6]
+
+>>> freqdict(myrolls) == {2: 1, 4: 3, 5: 1, 6: 5}
+True
+
+
+>>> print_freqtable(myrolls)
+      item   freq
+         2      1
+         4      3
+         5      1
+         6      5
+
+We want to show items that have frequency zero too, so provide keys.
+
+>>> print_freqtable(myrolls, keys=[1, 2, 3, 4, 5, 6])
+      item   freq
+         1      0
+         2      1
+         3      0
+         4      3
+         5      1
+         6      5
+
+Here is a ton of results from rolling a pair of dice.
+
+>>> mypairs = [(4, 6), (3, 3), (3, 2), (5, 6), (6, 2), (1, 6), (6, 4), (1, 1), (1, 4), (4, 4), (1, 1), 
+... (3, 3), (1, 3), (2, 5), (4, 2), (4, 5), (5, 5), (6, 5), (3, 2), (5, 5), (6, 1), (4, 6), (6, 2), (4, 
+... 5), (4, 5), (5, 6), (2, 3), (1, 6), (3, 6), (6, 3), (3, 3), (1, 6), (5, 5), (2, 3), (5, 2), 
+... (6, 4), (4, 3), (3, 4), (3, 2), (3, 1), (4, 2), (3, 3), (5, 4), (5, 3), (6, 3), (4, 3), (2, 6), (2, 
+... 6), (3, 6), (4, 5), (4, 4), (5, 3), (3, 5), (1, 6), (5, 3), (5, 3), (6, 1), (5, 1), (1, 4), (4, 2), 
+... (6, 5), (3, 6), (2, 3), (6, 6), (4, 5), (3, 4), (6, 5), (1, 3), (2, 4), (3, 6), (5, 1), (3, 2), (4, 
+... 3), (3, 4), (5, 5), (4, 4), (4, 6), (2, 6), (6, 6), (3, 6), (2, 3), (1, 5), (3, 6), (3, 1), (3, 6), 
+... (4, 2), (2, 4), (6, 2), (6, 5), (5, 5), (3, 5), (1, 5), (2, 5), (2, 5), (2, 6), (6, 3), (5, 1), (3, 
+... 5), (6, 2)]
+
+We want to make a table of the sums of those rolls.
+
+>>> from dice import dice_sum
+
+Make a list of the sums of those dice.
+
+>>> mydicesums = [dice_sum(pair) for pair in mypairs]
+
+>>> mydicesums 
+[10, 6, 5, 11, 8, 7, 10, 2, 5, 8, 2, 6, 4, 7, 6, 9, 10, 11, 5, 10, 7, 10, 8, 9, 
+9, 11, 5, 7, 9, 9, 6, 7, 10, 5, 7, 10, 7, 7, 5, 4, 6, 6, 9, 8, 9, 7, 8, 8, 9, 9, 8, 
+8, 8, 7, 8, 8, 7, 6, 5, 6, 11, 9, 5, 12, 9, 7, 11, 4, 6, 9, 6, 5, 7, 7, 10, 8, 10, 8, 
+12, 9, 5, 6, 9, 4, 9, 6, 6, 8, 11, 10, 8, 6, 7, 7, 8, 9, 6, 8, 8]
+
+Here is a table of those sums. We didn't roll a sum of 3.
+
+>>> print_freqtable(mydicesums)
+      item   freq
+         2      2
+         4      4
+         5     10
+         6     15
+         7     16
+         8     18
+         9     16
+        10     10
+        11      6
+        12      2
+
+
+Provide keys and we can see that sum 3 has frequency 0.
+
+>>> print_freqtable(mydicesums, keys=range(2, 13), label='sum')
+       sum   freq
+         2      2
+         3      0
+         4      4
+         5     10
+         6     15
+         7     16
+         8     18
+         9     16
+        10     10
+        11      6
+        12      2
+
+

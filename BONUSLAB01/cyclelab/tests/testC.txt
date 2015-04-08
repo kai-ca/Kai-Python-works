@@ -1,0 +1,45 @@
+>>> from cycle import Cycle
+>>> from data import MONTHS
+
+>>> MONTHS
+['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+
+Create a cyclic data structure using our Cycle class.
+
+>>> months = Cycle(MONTHS)
+
+>>> isinstance(months, Cycle)
+True
+
+>>> 'APR' in months
+True
+
+>>> 'FIB' in months
+False
+
+>>> len(months)
+12
+
+
+>>> list(months)
+['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+
+
+We want instances of the Cycle class to support iteration.
+
+>>> for month in months:
+...     print(month)
+JAN
+FEB
+MAR
+APR
+MAY
+JUN
+JUL
+AUG
+SEP
+OCT
+NOV
+DEC
+
+
